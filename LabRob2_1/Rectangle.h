@@ -56,4 +56,6 @@ public:
 
 	friend istream& operator>>(istream& in, Rectangle& r);
 
+	double& operator[](int index);
+
 };
