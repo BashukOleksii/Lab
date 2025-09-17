@@ -25,7 +25,7 @@ Rectangle::Rectangle() { a = 0; b = 0; }
 
 
 
-double Rectangle::P() {
+double Rectangle::P() const {
 
 	if (a == 0 || b == 0) {
 		cout << "Недостатньо значень сторiн для периметру" << endl;
@@ -34,7 +34,7 @@ double Rectangle::P() {
 	return 2 * (a + b);
 }
 
-double Rectangle::S() {
+double Rectangle::S() const {
 	if (a == 0 || b == 0) {
 		cout << "Недостатньо значень сторiн для площi." << endl;
 		return 0;
@@ -68,14 +68,14 @@ void Rectangle::setSizes() {
 
 
 
-double Rectangle::getA() {
+double Rectangle::getA() const {
 	return a;
 }
-double Rectangle::getB() {
+double Rectangle::getB() const {
 	return b;
 }
 
-void Rectangle::getSizes() {
+void Rectangle::getSizes() const {
 	if (IsSquare())
 		cout << "Квадрат\n";
 	else
@@ -87,7 +87,7 @@ void Rectangle::getSizes() {
 
 
 
-bool Rectangle::IsSquare() {
+bool Rectangle::IsSquare() const {
 	if (a == 0 || b == 0) {
 		cout << "Недостатньо значень сторiн для визначення того чи квадрат." << endl;
 		return false;
@@ -125,9 +125,9 @@ Rectangle Rectangle::operator--(int) {
 	return temp;
 }
 
-Rectangle::operator bool() { return a == b && a != 0; }
+Rectangle::operator bool() const { return a == b && a != 0; }
 
-Rectangle Rectangle::operator*(int scalar) {
+Rectangle Rectangle::operator*(int scalar) const {
 	double x1 = a, x2 = b;
 
 	if (scalar > 0) {
@@ -139,17 +139,17 @@ Rectangle Rectangle::operator*(int scalar) {
 
 }
 
-Rectangle::operator string() {
+Rectangle::operator string() const {
 	string num = to_string(a) + "|" + to_string(b);
 	return num;
 }
 
-Rectangle Rectangle::operator+(const Rectangle& r2)
+Rectangle Rectangle::operator+(const Rectangle& r2) const
 {
 	return Rectangle(a + r2.a, b + r2.b);
 }
 
-Rectangle Rectangle::operator+(int side)
+Rectangle Rectangle::operator+(int side) const
 {
 	return Rectangle(a + side, b + side);
 }

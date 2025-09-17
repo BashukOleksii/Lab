@@ -16,18 +16,18 @@ public:
 
 	Rectangle(double a, double b);
 
-	double P();
-	double S();
+	double P() const;
+	double S() const;
 
 	void setSizes();
 	void setA();
 	void setB();
 
-	void getSizes();
-	double getA();
-	double getB();
+	void getSizes() const;
+	double getA() const;
+	double getB() const;
 
-	bool IsSquare();
+	bool IsSquare() const;
 
 	void WhileNotNormal(double& num);
 
@@ -37,15 +37,15 @@ public:
 	Rectangle operator++(int);
 	Rectangle operator--(int);
 
-	operator bool();
+	operator bool() const;
 
-	Rectangle operator*(int scalar);
+	Rectangle operator*(int scalar) const;
 
-	operator string();
+	operator string() const;
 
-	Rectangle operator+(const Rectangle& r2);
+	Rectangle operator+(const Rectangle& r2) const;
 
-	Rectangle operator+(int side);
+	Rectangle operator+(int side) const;
 
 	friend Rectangle operator+(int side, const Rectangle& r2);
 
