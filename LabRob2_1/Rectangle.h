@@ -58,4 +58,8 @@ public:
 
 	double& operator[](int index);
 
+	Rectangle& operator +=(double num);
+	Rectangle& operator +=(int num);
+	Rectangle& operator +=(const Rectangle& r);
+
 };
