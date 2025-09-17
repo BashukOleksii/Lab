@@ -169,6 +169,16 @@ Rectangle::Rectangle(const string& str) {
 
 }
 
+double& Rectangle::operator[](int index)
+{
+	if (index == 0)
+		return a;
+	else if (index == 1)
+		return b;
+	else
+		throw new out_of_range ("Невiрний iндекс");
+}
+
 Rectangle operator+(int side, const Rectangle& r2)
 {
 	return Rectangle(r2.a + side, r2.b + side);
