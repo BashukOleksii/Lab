@@ -227,3 +227,33 @@ istream& operator>>(istream& in,  Rectangle& r)
 
 	return in;
 }
+
+bool operator==(const Rectangle& r1, const Rectangle& r2)
+{
+	return r1.a == r2.a && r1.b == r2.b;
+}
+
+bool operator>=(const Rectangle& r1, const Rectangle& r2)
+{
+	return r1.S() >= r2.S();
+}
+
+bool operator<=(const Rectangle& r1, const Rectangle& r2)
+{
+	return r1.S() <= r2.S();
+}
+
+bool operator>(const Rectangle& r1, const Rectangle& r2)
+{
+	return !(r1 <= r2);
+}
+
+bool operator<(const Rectangle& r1, const Rectangle& r2)
+{
+	return !(r1 >= r2);
+}
+
+bool operator!=(const Rectangle& r1, const Rectangle& r2)
+{
+	return !(r1 == r2);
+}

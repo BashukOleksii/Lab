@@ -45,6 +45,7 @@ int main() {
 	rectangles = nullptr;
 	cout << endl;*/
 
+	// Основні елементи
 	/*Rectangle r1 = Rectangle(5, 5);
 
 	string r1STR = r1;
@@ -75,7 +76,8 @@ int main() {
 	cout << "Число + прямокутник:" << 10 + rectangle1 << endl;
 	cout << "Прямокутник + число " << rectangle1 + 10 << endl;*/
 
-	Rectangle rr;
+	// Індексація та +=
+	/*Rectangle rr;
 	
 	cout << "Створено новий об'єкт Rectangle: " << rr << endl;
 
@@ -90,7 +92,29 @@ int main() {
 	cout << "rr[0] має дорiвнювати 10: " << rr[0] << endl;
 
 	(rr += 5)+=10;
-	cout << "Результат (rr += 5)+=10 =" << rr << endl;
+	cout << "Результат (rr += 5)+=10 = " << rr << endl;*/
+
+	//Логіні операції
+
+	Rectangle r1(10, 20), r2(5, 10);
+
+	bool a = r1 == r2;
+	cout << "r1 == r2 " << a << endl;
+
+	a = r1 >= r2;
+	cout << "r1 >= r2 " << a << endl;
+
+	a = r1 > r2;
+	cout << "r1 > r2 " << a << endl;
+
+	a = r1 <= r2;
+	cout << "r1 <= r2 " << a << endl;
+
+	a = r1 < r2;
+	cout << "r1 < r2 " << a << endl;
+
+	a = r1 != r2;
+	cout << "r1 != r2 " << a << endl;
 
 
 }

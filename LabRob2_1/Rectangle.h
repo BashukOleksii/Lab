@@ -62,4 +62,11 @@ public:
 	Rectangle& operator +=(int num);
 	Rectangle& operator +=(const Rectangle& r);
 
+	friend bool operator ==(const Rectangle& r1, const Rectangle& r2);
+	friend bool operator >=(const Rectangle& r1, const Rectangle& r2);
+	friend bool operator <=(const Rectangle& r1, const Rectangle& r2);
+	friend bool operator >(const Rectangle& r1, const Rectangle& r2);
+	friend bool operator <(const Rectangle& r1, const Rectangle& r2);
+	friend bool operator !=(const Rectangle& r1, const Rectangle& r2);
+
 };
