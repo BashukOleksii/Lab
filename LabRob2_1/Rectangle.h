@@ -30,4 +30,27 @@ public:
 	bool IsSquare();
 
 	void WhileNotNormal(double& num);
+
+	Rectangle& operator++();
+	Rectangle& operator--();
+
+	Rectangle operator++(int);
+	Rectangle operator--(int);
+
+	operator bool();
+
+	Rectangle operator*(int scalar);
+
+	operator string();
+
+	Rectangle operator+(const Rectangle& r2);
+
+	Rectangle operator+(int side);
+
+	friend Rectangle operator+(int side, const Rectangle& r2);
+
+
+	Rectangle(const string& str);
+
+	friend ostream& operator<<(ostream& out, const Rectangle& r);
 };
