@@ -53,4 +53,7 @@ public:
 	Rectangle(const string& str);
 
 	friend ostream& operator<<(ostream& out, const Rectangle& r);
+
+	friend istream& operator>>(istream& in, Rectangle& r);
+
 };

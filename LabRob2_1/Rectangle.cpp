@@ -178,3 +178,19 @@ ostream& operator<<(ostream& out, const Rectangle& r) {
 	out << r.a << " , " << r.b;
 	return out;
 }
+
+istream& operator>>(istream& in,  Rectangle& r)
+{
+	double x1 = -1, x2 = -1;
+
+	while (x1 <= 0 || x2 <= 0) {
+		in >> x1;
+		in >> x2;
+	}
+
+	r.a = x1;
+	r.b = x2;
+
+
+	return in;
+}

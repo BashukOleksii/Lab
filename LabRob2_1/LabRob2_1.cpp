@@ -45,7 +45,7 @@ int main() {
 	rectangles = nullptr;
 	cout << endl;*/
 
-	Rectangle r1 = Rectangle(5, 5);
+	/*Rectangle r1 = Rectangle(5, 5);
 
 	string r1STR = r1;
 
@@ -73,5 +73,13 @@ int main() {
 
 	cout << "Сума прямокутникiв: " << rectangle1 + rectangle2 << endl;
 	cout << "Число + прямокутник:" << 10 + rectangle1 << endl;
-	cout << "Прямокутник + число " << rectangle1 + 10 << endl;
+	cout << "Прямокутник + число " << rectangle1 + 10 << endl;*/
+
+	Rectangle rr;
+	
+	cout << "Створено новий об'єкт Rectangle: " << rr << endl;
+
+	cout << "Введiть значення для полiв Rectangle (Перша сторона, друга сторона): "; cin >> rr;
+
+	cout << "Пряокутник пiсля введення: " << rr << endl;
 }
