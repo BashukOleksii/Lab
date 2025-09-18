@@ -145,7 +145,7 @@ Rectangle Rectangle::operator*(int scalar) const {
 }
 
 Rectangle::operator string() const {
-	string num = to_string(a) + "|" + to_string(b);
+	string num =  to_string(a) + "|" + to_string(b);
 	return num;
 }
 
@@ -217,8 +217,6 @@ ostream& operator<<(ostream& out, const Rectangle& r) {
 	out << setw(15) << r.a << setw(5) << "|" << setw(15) << r.b;
 	return out;
 }
-
-
 
 istream& operator>>(istream& in,  Rectangle& r)
 {
