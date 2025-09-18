@@ -3,48 +3,6 @@
 int main() {
 	setlocale(0, "UKR");
 
-	/*cout << "Виклик конструктора за замовчуванням\n";
-	Rectangle rectangle;
-	cout << "Значення площi: " << rectangle.S() << " та перимету: " << rectangle.P() << " в конструкторi за замовчуванням" << endl;
-	
-	cout << endl;
-
-	cout << "Виклик парамеризованого конструктора з помилкою:\n";
-	Rectangle rectangle1(10, -10);
-	cout << "Площа: " << rectangle1.S() << ", периметр: " << rectangle1.P() << endl;
-
-	cout << endl;
-
-	cout << "Використання гетерiв та сетерiв:\n";
-	Rectangle rectangle3;
-
-	rectangle3.setA();
-	rectangle3.setB();
-
-	cout << "GetA: " << rectangle3.getA() << ",GetB: " << rectangle3.getB() << endl;
-	cout << "GetSizes: \n"; rectangle3.getSizes();
-
-	cout << endl;
-
-	cout << "Робота з масивом:\n";
-
-	Rectangle* rectangles = new Rectangle[5];
-
-	for (int i = 0; i < 5; i++) {
-		cout << i + 1 << " прямокутник: " << endl;
-		rectangles[i].setSizes();
-	}
-
-	for (int i = 0; i < 5; i++) {
-		cout << i + 1 << " прямокутник: " << endl;
-		rectangles[i].getSizes();
-	}
-
-
-	delete[] rectangles;
-	rectangles = nullptr;
-	cout << endl;*/
-
 	// Основні елементи
 	/*Rectangle r1 = Rectangle(5, 5);
 
@@ -96,7 +54,7 @@ int main() {
 
 	//Логіні операції
 
-	Rectangle r1(10, 20), r2(5, 10);
+	/*Rectangle r1(10, 20), r2(5, 10);
 
 	bool a = r1 == r2;
 	cout << "r1 == r2 " << a << endl;
@@ -114,7 +72,18 @@ int main() {
 	cout << "r1 < r2 " << a << endl;
 
 	a = r1 != r2;
-	cout << "r1 != r2 " << a << endl;
+	cout << "r1 != r2 " << a << endl;*/
+
+	Rectangle rectangles[5];
+
+	for (int i = 0; i < 5; i++) {
+		cout << "Введiть " << i + 1 << " прямокутник: ";
+		cin >> rectangles[i];
+	}
+
+	Rectangle::Show();
+	for (int i = 0; i < 5; i++)
+		cout << rectangles[i] << endl;
 
 
 }

@@ -174,6 +174,11 @@ Rectangle::Rectangle(const string& str) {
 
 }
 
+void Rectangle::Show()
+{
+	cout << setw(15) << "1 сторона" << setw(5) << "|" << setw(15) << "2 сторона" << endl;
+}
+
 double& Rectangle::operator [](int index)
 {
 	if (index == 0)
@@ -209,9 +214,11 @@ Rectangle operator+(int side, const Rectangle& r2)
 }
 
 ostream& operator<<(ostream& out, const Rectangle& r) {
-	out << r.a << " , " << r.b;
+	out << setw(15) << r.a << setw(5) << "|" << setw(15) << r.b;
 	return out;
 }
+
+
 
 istream& operator>>(istream& in,  Rectangle& r)
 {
@@ -256,4 +263,15 @@ bool operator<(const Rectangle& r1, const Rectangle& r2)
 bool operator!=(const Rectangle& r1, const Rectangle& r2)
 {
 	return !(r1 == r2);
+}
+
+Rectangle& Rectangle::operator=(const Rectangle& r) {
+	
+	if (*this == r)
+		return *this;
+
+	a = r.a;
+	b = r.b;
+
+	return *this;
 }
