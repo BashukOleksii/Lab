@@ -3,89 +3,96 @@
 int main() {
 	setlocale(0, "UKR");
 
-	/*cout << "Виклик конструктора за замовчуванням\n";
-	Rectangle rectangle;
-	cout << "Значення площi: " << rectangle.S() << " та перимету: " << rectangle.P() << " в конструкторi за замовчуванням" << endl;
-	
-	cout << endl;
+	//Основні елементи
+	Rectangle rect = Rectangle(5, 5);
 
-	cout << "Виклик парамеризованого конструктора з помилкою:\n";
-	Rectangle rectangle1(10, -10);
-	cout << "Площа: " << rectangle1.S() << ", периметр: " << rectangle1.P() << endl;
-
-	cout << endl;
-
-	cout << "Використання гетерiв та сетерiв:\n";
-	Rectangle rectangle3;
-
-	rectangle3.setA();
-	rectangle3.setB();
-
-	cout << "GetA: " << rectangle3.getA() << ",GetB: " << rectangle3.getB() << endl;
-	cout << "GetSizes: \n"; rectangle3.getSizes();
-
-	cout << endl;
-
-	cout << "Робота з масивом:\n";
-
-	Rectangle* rectangles = new Rectangle[5];
-
-	for (int i = 0; i < 5; i++) {
-		cout << i + 1 << " прямокутник: " << endl;
-		rectangles[i].setSizes();
-	}
-
-	for (int i = 0; i < 5; i++) {
-		cout << i + 1 << " прямокутник: " << endl;
-		rectangles[i].getSizes();
-	}
-
-
-	delete[] rectangles;
-	rectangles = nullptr;
-	cout << endl;*/
-
-	/*Rectangle r1 = Rectangle(5, 5);
-
-	string r1STR = r1;
+	string r1STR = rect;
 
 	cout << "Str = " << r1STR << endl;
-	cout << "r1++ = " << r1++ << endl;
-	cout << "r1-- = " << r1-- << endl;
-	cout << "++r1 = " << ++r1 << endl;
-	cout << "--r1 = " << --r1 << endl;
+	
+	Rectangle::Show();
+	cout << rect << "(Об'єкт rect - початкове значення)" << endl;
+	cout << rect++ << "(rect++)" << endl;
+	cout << rect-- << "(rect--)"<< endl;
+	cout << ++rect << "(++rect)" << endl;
+	cout << --rect << "(--rect)" <<  endl;
 
-	for (int i = 0; i < 5; i++)
-		cout << --r1 << endl;
+	cout << "rect*5: " << endl;
+	Rectangle::Show();
+	cout << rect * 5 << endl;
 
-	cout << "r1*5 = " << r1 * 5 << endl;
+	cout << endl;
 
+	cout << "Рядкове значення (r):" << endl;
 	Rectangle r = r1STR;
-
-	cout << r << endl;
-
+	cout << "r квадрат? ";
 	if (r)
 		cout << "Квадрат" << endl;
-
+	Rectangle::Show();
+	cout << r << endl;
 
 	Rectangle rectangle1 = r1STR;
 	Rectangle rectangle2(10, 10);
 
-	cout << "Сума прямокутникiв: " << rectangle1 + rectangle2 << endl;
-	cout << "Число + прямокутник:" << 10 + rectangle1 << endl;
-	cout << "Прямокутник + число " << rectangle1 + 10 << endl;*/
+	cout << endl;
 
+	Rectangle::Show();
+	cout << rectangle1 << " (rectngle1 початкове значення)" << endl;
+	cout << rectangle2 << " (rectngle2 почакове значення)" << endl;
+
+	cout << rectangle1 + rectangle2 << " (Сума двох прямокутникiв)"<<endl;
+	cout  << 10 + rectangle1 << " (Число + прямокутник:)" << endl;
+	cout  << rectangle1 + 10 << " (Прямокутник + число)" << endl;
+
+	//Індексація та +=
 	Rectangle rr;
 	
-	cout << "Створено новий об'єкт Rectangle: " << rr << endl;
+	Rectangle::Show();
 
+	cout << rr << "(пустий об'єкт rr)" << endl;
 	cout << "Введiть значення для полiв Rectangle (Перша сторона, друга сторона): "; cin >> rr;
+	cout << rr << "(Об'єкт rr піля введення)" << endl;
+	(rr += 5)+=10;
+	cout << rr << "Об'єкт rr пiсля операцiї (rr += 5)+=10" << endl;
 
-	cout << "Прямокутник пiсля введення: " << rr << endl;
-
+	cout << "Доступ до полiв за iндексом: " << endl;
 	cout << "rr[0] = " << rr[0] << endl;
-
 	rr[0] = 10;
+	cout << "rr[0] має дорiвнювати 10: " << rr[0] << endl;
 
-	cout << "rr[0] має дорівнювати 10: " << rr[0] << endl;
+	//Логіні операції
+	Rectangle r1(10, 20), r2(5, 10);
+
+	Rectangle::Show();
+	cout << r1 << "(Об'єкт r1)" << endl;
+	cout << r2 << "(Об'єкт r2)" << endl;
+
+	bool a = r1 == r2;
+	cout << "r1 == r2 " << a << endl;
+	a = r1 >= r2;
+	cout << "r1 >= r2 " << a << endl;
+	a = r1 > r2;
+	cout << "r1 > r2 " << a << endl;
+	a = r1 <= r2;
+	cout << "r1 <= r2 " << a << endl;
+	a = r1 < r2;
+	cout << "r1 < r2 " << a << endl;
+	a = r1 != r2;
+	cout << "r1 != r2 " << a << endl;
+
+	// Перевизначені оператори потоку
+
+	cout << "Створено масив об'єктiв:" << endl;
+	Rectangle rectangles[5];
+
+	for (int i = 0; i < 5; i++) {
+		cout << "Введiть " << i + 1 << " прямокутник: ";
+		cin >> rectangles[i];
+	}
+
+	Rectangle::Show();
+	for (int i = 0; i < 5; i++)
+		cout << rectangles[i] << endl;
+
+
 }

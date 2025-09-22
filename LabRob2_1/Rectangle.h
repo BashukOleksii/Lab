@@ -1,7 +1,7 @@
 #pragma once
 #include <iostream>
 #include <string>
-
+#include <iomanip>
 
 using namespace std;
 
@@ -53,9 +53,23 @@ public:
 	Rectangle(const string& str);
 
 	friend ostream& operator<<(ostream& out, const Rectangle& r);
+	static void Show();
 
 	friend istream& operator>>(istream& in, Rectangle& r);
 
 	double& operator[](int index);
+
+	Rectangle& operator +=(double num);
+	Rectangle& operator +=(int num);
+	Rectangle& operator +=(const Rectangle& r);
+
+	friend bool operator ==(const Rectangle& r1, const Rectangle& r2);
+	friend bool operator >=(const Rectangle& r1, const Rectangle& r2);
+	friend bool operator <=(const Rectangle& r1, const Rectangle& r2);
+	friend bool operator >(const Rectangle& r1, const Rectangle& r2);
+	friend bool operator <(const Rectangle& r1, const Rectangle& r2);
+	friend bool operator !=(const Rectangle& r1, const Rectangle& r2);
+
+	Rectangle& operator =(const Rectangle& r);
 
 };
