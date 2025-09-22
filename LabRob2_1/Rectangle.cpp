@@ -106,6 +106,8 @@ Rectangle& Rectangle::operator--() {
 	if (a > 1.0 && b > 1.0) {
 		a -= 1; b -= 1;
 	}
+	else
+		throw  exception("Вихiд за межi сторiн");
 
 	return *this;
 }
@@ -121,6 +123,8 @@ Rectangle Rectangle::operator--(int) {
 	if (a > 1.0 && b > 1.0) {
 		a -= 1; b -= 1;
 	}
+	else
+		throw  exception("Вихiд за можлве значення");
 
 	return temp;
 }
@@ -134,6 +138,7 @@ Rectangle Rectangle::operator*(int scalar) const {
 		x1 *= scalar;
 		x2 *= scalar;
 	}
+	else throw  exception("Не можна множити на вiд'ємну сторону");
 
 	return Rectangle(x1, x2);
 
@@ -169,14 +174,33 @@ Rectangle::Rectangle(const string& str) {
 
 }
 
-double& Rectangle::operator[](int index)
+double& Rectangle::operator [](int index)
 {
 	if (index == 0)
 		return a;
 	else if (index == 1)
 		return b;
 	else
-		throw new out_of_range ("Невiрний iндекс");
+		throw  out_of_range ("Невiрний iндекс");
+}
+
+Rectangle& Rectangle::operator+=(double num)
+{
+	a += num; b += num;
+	return *this;
+}
+
+Rectangle& Rectangle::operator+=(int num)
+{
+	a += num; b += num;
+	return *this;
+}
+
+Rectangle& Rectangle::operator+=(const Rectangle& r)
+{
+	a += r.a;
+	b += r.b;
+	return *this;
 }
 
 Rectangle operator+(int side, const Rectangle& r2)
@@ -202,4 +226,34 @@ istream& operator>>(istream& in,  Rectangle& r)
 
 
 	return in;
+}
+
+bool operator==(const Rectangle& r1, const Rectangle& r2)
+{
+	return r1.a == r2.a && r1.b == r2.b;
+}
+
+bool operator>=(const Rectangle& r1, const Rectangle& r2)
+{
+	return r1.S() >= r2.S();
+}
+
+bool operator<=(const Rectangle& r1, const Rectangle& r2)
+{
+	return r1.S() <= r2.S();
+}
+
+bool operator>(const Rectangle& r1, const Rectangle& r2)
+{
+	return !(r1 <= r2);
+}
+
+bool operator<(const Rectangle& r1, const Rectangle& r2)
+{
+	return !(r1 >= r2);
+}
+
+bool operator!=(const Rectangle& r1, const Rectangle& r2)
+{
+	return !(r1 == r2);
 }
